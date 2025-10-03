@@ -16,19 +16,18 @@ $.ajax({
     //se der sucesso (200) cai aqui nesse bloco
     success: function (dados) {
 
-        //selecionar a div dos generos
         const menuCategorias = $('.dropdown-menu');
         menuCategorias.empty();
 
         dados.forEach(categoria => {
 
-            const item = `<li><a class="dropdown-item" href="produtos.html">${categoria.nome}</a></li>`;
+            const item = `<li><a class="dropdown-item" href="produtos.html?idCategoria=${categoria.id}">${categoria.nome}</a></li>`;
 
             menuCategorias.append(item);
         });
 
     },
     error: function (erro) {
-        console.log('Deu erro!');
+        console.log('Erro a o carregar categorias!');
     }
 });
